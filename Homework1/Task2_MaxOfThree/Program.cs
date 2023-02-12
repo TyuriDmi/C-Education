@@ -5,10 +5,11 @@ double SecondNumber = Convert.ToDouble(Console.ReadLine());
 double ThirdNumber = Convert.ToDouble(Console.ReadLine());
 double max = FirstNumber;
 if (SecondNumber>max) {
-    max = SecondNumber;
-    if (ThirdNumber>max) {
+    max = SecondNumber;}
+else {
+     if (ThirdNumber>max) {
         max = ThirdNumber;
-    }
-}
+        }
+   } 
 Console.Write("Максимальное из трех введенных чисел - ");
 Console.WriteLine(max);
