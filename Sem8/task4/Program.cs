@@ -107,7 +107,7 @@ FillArrayRandom(MyArray);
 PrintArray(MyArray);
 Console.WriteLine("----------------------");
 
-//int[,] newArray = DeleteLineAndColumn(MyArray, 3, 3);
-PrintArray(DeleteLineAndColumn(MyArray, PositionOfMinimum(MyArray)));
-//PrintArray(newArray);
+int[,] newArray = DeleteLineAndColumn(MyArray, PositionOfMinimum(MyArray));
+//PrintArray(DeleteLineAndColumn(MyArray, PositionOfMinimum(MyArray)));
+PrintArray(newArray);
 
