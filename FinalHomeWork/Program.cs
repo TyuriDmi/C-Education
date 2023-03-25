@@ -1,4 +1,5 @@
-﻿int EnteringInt(string MessageToUser)
+﻿//ввод, исключающий подачу на вход чего-либо, кроме целого положительного
+int EnteringInt(string MessageToUser)
 {
     bool flag = false;
     bool temp = false;
@@ -7,7 +8,7 @@
     {
         Console.WriteLine(MessageToUser);
         temp = Int32.TryParse((Console.ReadLine()), out Number);
-        if (temp == true && Number>0)
+        if (temp == true && Number > 0)
         {
             flag = true;
         }
@@ -19,7 +20,8 @@
     return Number;
 }
 
-string[] FillArrayString(int Length)
+// Заполнение массива вручную
+string[] FillArrayString(int Length) 
 {
     string[] array = new string[Length];
     {
@@ -32,10 +34,12 @@ string[] FillArrayString(int Length)
     }
 }
 
+// Форимрование нового массива из существующего с элементами длиной меньше заданного
 string[] LessThenFour (string[] array) {
     int count = 0;
+    int limit = 4;
     for (int i =  0; i < array.Length; i++) {
-        if (array[i].Length<4) count++;
+        if (array[i].Length < limit) count++;
     }
     string[] newArray = new string[count];
     int k = 0;
@@ -56,8 +60,6 @@ void PrintArray(string[] array) {
     Console.Write($"{array[array.Length-1]}]");
     Console.WriteLine();
 }
-
-
 
 string[] myArray = FillArrayString(EnteringInt("Введите количество элементов массива"));
 PrintArray(myArray);
