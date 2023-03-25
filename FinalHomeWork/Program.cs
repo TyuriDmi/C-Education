@@ -38,7 +38,7 @@ string[] LessThenFour (string[] array) {
         if (array[i].Length<4) count++;
     }
     string[] newArray = new string[count];
-    k = 0;
+    int k = 0;
     for (int j =  0; j < newArray.Length; j++) {
         if (array[j].Length<4) {
             newArray[k] = array[j];
@@ -48,9 +48,22 @@ string[] LessThenFour (string[] array) {
     return newArray;
 }
 
+void PrintArray(string[] array) {
+    Console.Write("[");
+    for(int i=0; i<array.Length-1; i++){
+        Console.Write($"{array[i]}, ");
+    }
+    Console.Write($"{array[array.Length-1]}]");
+    Console.WriteLine();
+}
+
 
 
 string[] myArray = FillArrayString(EnteringInt("Введите количество элементов массива"));
+PrintArray(myArray);
+string[] newArray = LessThenFour(myArray);
+PrintArray(newArray);
+
 
 
 
